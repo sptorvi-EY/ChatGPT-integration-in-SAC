@@ -1,0 +1,53 @@
+{
+	"eula": "",
+	"vendor": "Sudhanshu Torvi",
+	"license": "",
+	"id": "com.sudhanshutorvi.sap.chatgpt_test_widget",
+	"version": "1.0.0",
+	"name": "SAC_ChatGPT_test",
+	"newInstancePrefix": "ChatGPTInSAC",
+	"description": "A custom widget to integrate chatGPT3 in SAC Analytic application",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "custom-widget",
+			"url": "https://eygermany-my.sharepoint.com/:u:/r/personal/sudhanshu_torvi_de_ey_com/Documents/Project%20work/Narasimha/SAP%20Analytics%20Cloud/main.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
+	],
+	"properties": {
+		"width": {
+			"type": "integer",
+			"default": 1
+		},
+		"height": {
+			"type": "integer",
+			"default": 1
+		}
+	},
+	"methods": {
+		"post": {
+			"description": "Wrapper for jQuery post",
+			"parameters": [
+				{
+					"name": "APIKey",
+					"type": "string",
+					"description": ""
+				},
+				{
+					"name": "endPoint",
+					"type": "string",
+					"description": ""
+				},
+				{
+					"name": "prompt",
+					"type": "string",
+					"description": ""
+				}
+			],
+			"returnType": "string"
+		}
+	},
+	"events": {}
+}
