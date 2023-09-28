@@ -1,15 +1,15 @@
-var ajaxCall = (key, url, prompt) => {
+var ajaxCall = (key, prompt) => {
   return new Promise((resolve, reject) => {
     $.ajax({
       url: url,
       type: "POST",
       dataType: "json",
       data: JSON.stringify({
-        model: "text-davinci-003",
+        model: "ai-corner-davinci-003",
         prompt: prompt,
         max_tokens: 1024,
         n: 1,
-        temperature: 0.5
+        temperature: 0.5,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -28,7 +28,7 @@ var ajaxCall = (key, url, prompt) => {
   });
 };
 
-const url = "https://api.openai.com/v1";
+const url = "https://qs-openai-us-001.openai.azure.com/openai/deployments/ai-corner-davinci-003/completions?api-version=2022-12-01";
 
 (function () {
   const template = document.createElement("template");
@@ -39,15 +39,15 @@ const url = "https://api.openai.com/v1";
       </div>
     `;
   class MainWebComponent extends HTMLElement {
-    async post(apiKey, endpoint, prompt) {
+    async post(apiKey, prompt) {
       const { response } = await ajaxCall(
         apiKey,
-        `${url}/${endpoint}`,
+        `${url}`,
         prompt
       );
       console.log(response.choices[0].text);
       return response.choices[0].text;
     }
   }
-  customElements.define("com-torvisudhanshu-sap-chatgpt_test_widget", MainWebComponent);
+  customElements.define("custom-widget", MainWebComponent);
 })();
