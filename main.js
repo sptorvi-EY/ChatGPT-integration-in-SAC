@@ -9,7 +9,7 @@ var ajaxCall = (key, url, prompt) => {
         prompt: prompt,
         max_tokens: 1024,
         n: 1,
-        temperature: 0.5,
+        temperature: 0.5
       }),
       headers: {
         "Content-Type": "application/json",
@@ -49,5 +49,5 @@ const url = "https://api.openai.com/v1";
       return response.choices[0].text;
     }
   }
-  customElements.define("custom-widget", MainWebComponent);
+  customElements.define("com-torvisudhanshu-sap-chatgpt_test_widget", MainWebComponent);
 })();
