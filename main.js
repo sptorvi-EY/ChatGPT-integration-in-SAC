@@ -6,7 +6,7 @@ var ajaxCall = (key, url, prompt) => {
       dataType: "json",
       data: JSON.stringify({
         prompt: prompt,
-        temperature: 1,
+        temperature: 0.5,
         top_p: 0.5,
         frequency_penalty: 0,
         presence_penalty: 0,
